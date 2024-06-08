@@ -140,7 +140,7 @@ def one(total_df):
                     st.markdown(f"##### {selected_stock}의 일자별 거래량 추이")
                     st.write('거래량이 양수면 매수, 음수면 매도입니다.')
                     df = stock.get_market_trading_volume_by_date(str(start_date), str(end_date), str(selected_stock_code))
-                    df.index = df.index.date # 날짜 표시에서 시간은 지우기
+                    df.index = pd.to_datetime(df.index) # 날짜 표시에서 시간은 지우기
                     df = df.dropna()
                     df = df.loc[::-1]  # 최신 날짜부터 나타내도록 역순하기
 
