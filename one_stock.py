@@ -106,35 +106,35 @@ def one(total_df):
                     progress_bar.progress(progress_step / 10)
                 sleep(0.2)
 
-                with st.expander("일자별 BPS, PER, PBR, EPS, DIV, DPS"):
-                    st.markdown(f"##### {selected_stock}의 일자별 BPS, PER, PBR, EPS, DIV, DPS")
-                    df = stock.get_market_fundamental(str(start_date), str(end_date), str(selected_stock_code))
-                    st.dataframe(df)
-                    df.index = pd.to_datetime(df.index)
+                # with st.expander("일자별 BPS, PER, PBR, EPS, DIV, DPS"):
+                #     st.markdown(f"##### {selected_stock}의 일자별 BPS, PER, PBR, EPS, DIV, DPS")
+                #     df = stock.get_market_fundamental(str(start_date), str(end_date), str(selected_stock_code))
+                #     st.dataframe(df)
+                #     df.index = pd.to_datetime(df.index)
                     
-                    df = df.dropna()
-                    df = df.loc[::-1]  # 최신 날짜부터 나타내도록 역순하기
-                    st.dataframe(df)
+                #     df = df.dropna()
+                #     df = df.loc[::-1]  # 최신 날짜부터 나타내도록 역순하기
+                #     st.dataframe(df)
 
-                    st.markdown("<hr>", unsafe_allow_html=True)
+                #     st.markdown("<hr>", unsafe_allow_html=True)
 
-                    fig = make_subplots(rows=2, cols=3, shared_xaxes=True,
-                                        subplot_titles=('BPS', 'PER', 'PBR', 'EPS', 'DIV', 'DPS'),
-                                        horizontal_spacing=0.15)
-                    fig.add_trace(go.Scatter(x=df.index, y=df['BPS'], mode='lines+markers', name='BPS'), row=1, col=1)
-                    fig.add_trace(go.Scatter(x=df.index, y=df['PER'], mode='lines+markers', name='PER'), row=1, col=2)
-                    fig.add_trace(go.Scatter(x=df.index, y=df['PBR'], mode='lines+markers', name='PBR'), row=1, col=3)
-                    fig.add_trace(go.Scatter(x=df.index, y=df['EPS'], mode='lines+markers', name='EPS'), row=2, col=1)
-                    fig.add_trace(go.Scatter(x=df.index, y=df['DIV'], mode='lines+markers', name='DIV'), row=2, col=2)
-                    fig.add_trace(go.Scatter(x=df.index, y=df['DPS'], mode='lines+markers', name='DPS'), row=2, col=3)
+                #     fig = make_subplots(rows=2, cols=3, shared_xaxes=True,
+                #                         subplot_titles=('BPS', 'PER', 'PBR', 'EPS', 'DIV', 'DPS'),
+                #                         horizontal_spacing=0.15)
+                #     fig.add_trace(go.Scatter(x=df.index, y=df['BPS'], mode='lines+markers', name='BPS'), row=1, col=1)
+                #     fig.add_trace(go.Scatter(x=df.index, y=df['PER'], mode='lines+markers', name='PER'), row=1, col=2)
+                #     fig.add_trace(go.Scatter(x=df.index, y=df['PBR'], mode='lines+markers', name='PBR'), row=1, col=3)
+                #     fig.add_trace(go.Scatter(x=df.index, y=df['EPS'], mode='lines+markers', name='EPS'), row=2, col=1)
+                #     fig.add_trace(go.Scatter(x=df.index, y=df['DIV'], mode='lines+markers', name='DIV'), row=2, col=2)
+                #     fig.add_trace(go.Scatter(x=df.index, y=df['DPS'], mode='lines+markers', name='DPS'), row=2, col=3)
 
-                    fig.update_layout(xaxis=dict(tickmode='linear'),template='plotly_white')
+                #     fig.update_layout(xaxis=dict(tickmode='linear'),template='plotly_white')
 
-                    # Streamlit에 그래프 표시
-                    st.plotly_chart(fig)
-                    progress_step += 1
-                    progress_bar.progress(progress_step / 10)
-                sleep(0.2)
+                #     # Streamlit에 그래프 표시
+                #     st.plotly_chart(fig)
+                #     progress_step += 1
+                #     progress_bar.progress(progress_step / 10)
+                # sleep(0.2)
 
                 with st.expander("일자별 거래실적 추이"):
                     st.markdown(f"##### {selected_stock}의 일자별 거래량 추이")
