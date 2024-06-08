@@ -70,7 +70,7 @@ def one(total_df):
                     st.dataframe(df)
                     progress_step += 1
                     progress_bar.progress(progress_step / 10)
-                sleep(10)
+                sleep(0.2)
 
                 with st.expander("가격 변동 그래프"):
                     st.markdown("##### 가격 변동 분석")
@@ -104,7 +104,7 @@ def one(total_df):
                     st.plotly_chart(fig)
                     progress_step += 1
                     progress_bar.progress(progress_step / 10)
-                sleep(10)
+                sleep(0.2)
 
                 with st.expander("일자별 BPS, PER, PBR, EPS, DIV, DPS"):
                     st.markdown(f"##### {selected_stock}의 일자별 BPS, PER, PBR, EPS, DIV, DPS")
