@@ -65,7 +65,7 @@ def one(total_df):
                     df = stock.get_market_ohlcv(str(start_date), str(end_date), str(selected_stock_code))
                     df.index = pd.to_datetime(df.index)
                     df.index = df.index.date
-                    
+
                     df = df.loc[::-1]  # 최신 날짜부터 나타내도록 역순하기
                     st.dataframe(df)
                     progress_step += 1
@@ -109,7 +109,9 @@ def one(total_df):
                 with st.expander("일자별 BPS, PER, PBR, EPS, DIV, DPS"):
                     st.markdown(f"##### {selected_stock}의 일자별 BPS, PER, PBR, EPS, DIV, DPS")
                     df = stock.get_market_fundamental(str(start_date), str(end_date), str(selected_stock_code))
-                    df.index = df.index.date # 날짜 표시에서 시간은 지우기
+                    df.index = pd.to_datetime(df.index)
+                    df.index = df.index.date
+                    
                     df = df.dropna()
                     df = df.loc[::-1]  # 최신 날짜부터 나타내도록 역순하기
                     st.dataframe(df)
