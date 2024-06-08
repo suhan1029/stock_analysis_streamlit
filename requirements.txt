@@ -1,1 +1,8 @@
-pip install streamlit pykrx plotly prophet pandas os time datetime 
+streamlit
+pykrx
+plotly
+prophet
+pandas
+os
+time
+datetime 
