@@ -3,6 +3,3 @@ pykrx
 plotly
 prophet
 pandas
-os
-time
-datetime 
