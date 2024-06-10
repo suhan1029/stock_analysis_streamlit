@@ -3,15 +3,20 @@ import streamlit as st
 def home():
     st.markdown("<hr>", unsafe_allow_html=True)
     st.markdown('#### 국내 주식을 분석하는 사이트입니다.')
-    st.write('pykrx를 사용하여 증권시장의 주식 정보를 스크래핑합니다.')
+    st.write('PyKrx를 사용하여 증권시장의 주식 정보를 스크래핑합니다.')
+    st.write('PyKrx GitHub - https://github.com/sharebook-kr/pykrx')
+    st.write('주식 분석 Github - https://github.com/suhan1029/stock_analysis_streamlit')
     st.write('처음 들어오시거나, 어제 이후 오늘 처음 들어오셨다면 리스트 최신화 버튼을 눌러주시기 바랍니다.')
-    st.write('왼쪽 사이드바에서 분석 방법을 선택하면 됩니다.')
+    st.write(' - 리스트 최신화는 한국 주식 리스트, KRX 인덱스 리스트를 최신화 합니다.')
+    st.write('')
+
+    st.markdown('##### 왼쪽 사이드바에서 분석 방법을 선택하면 됩니다.')
     st.write(' - 특정 종목 분석은 말 그대로 특정한 하나의 종목을 분석하는 것입니다.')
     st.write(' - 인덱스 분석은 특정한 인덱스를 분석합니다.')
     st.write(' - 시장 전체 분석은 주식 시장을 전체적으로 분석합니다.')
     st.write(' - 인덱스 기반 종목 추천은 투자자별 순매수 종목 데이터를 기반으로 종목을 추천합니다.')
     st.write('조회하는 날짜 기준 4년 전부터 어제까지의 데이터를 가져올 수 있습니다. 실시간으로는 가져오지 않습니다.')
-    st.write('서버에 과도한 부담을 줄 수 없으므로 정보 사이사이에 지연시간을 두었습니다.')
+    st.write('KRX 서버에 과도한 부담을 줄 수 없으므로 정보 사이사이에 지연시간을 두었습니다.')
     st.write('ETF, ETN, ELW, 채권은 제외하였습니다.')
     st.markdown('##### ※ 모든 투자의 책임은 본인에게 있습니다.')
 
