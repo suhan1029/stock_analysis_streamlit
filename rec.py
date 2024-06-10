@@ -190,6 +190,7 @@ def recommand(total_index_df, total_df):
                 st.write('이런! 추천 조건에 맞는 종목이 없습니다! 따라갈 투자자나 시장을 변경하시는 것을 추천드립니다.')
             else:
                 st.write('최대 4개까지의 종목을 추천합니다.')
+                st.write('다운 받기 버튼을 누르면 분석 결과는 사라집니다.')
                 st.download_button(
                     label='csv로 다운 받기',
                     data=recommended_stocks_df.to_csv(index=False).encode('utf-8'),
